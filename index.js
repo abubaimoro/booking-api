@@ -1,6 +1,11 @@
 import express from 'express';
-
+import mongoose, { connect } from 'mongoose';
+import 'dotenv/config'
 import { bookingRouter } from './routes/all-routes.js';
+
+// connect to mongodb
+await mongoose.connect(process.env.mongo_uri);
+
 // create an express app
 const bookingApp = express();
 
@@ -10,7 +15,8 @@ bookingApp.get('/booking', (req, res, next) => {
     res.json('Book with us');
 });
 
-bookingApp.use (bookingRouter)
+bookingApp.use(express.json());
+bookingApp.use (bookingRouter);
 
 
 // listen for upcoming requests
