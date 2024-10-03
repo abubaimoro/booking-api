@@ -5,8 +5,14 @@
     res.status(200).json('these are all bookings');
  }
 
- export const getOneBooking = (req, res) => {
-    res.status(200).json('This is just one booking');
+ export const getOneBooking = async (req, res, next) => {
+ try {
+     const newBooking = new booking(req.body);
+     const bookings = await newBooking.save();
+      res.status(200).json(bookings);
+ } catch (error) {
+   next(error)
+ }
  }
 
  export const postAllBooking = async (req, res,) => {
