@@ -13,20 +13,20 @@ lastName:{
 sex: {
     type: String,
     enum: {
-        values: ["male", "female"]
+        values: ["male","female"]
     },
     // required: true
 },
 
 seatNumber: {
     type: Number,
-    unique: true,
+    // unique: true,
     // required: true
 },
 
 email: {
     type: String,
-    unique: true,
+    // unique: true,
     // required: true
 },
 

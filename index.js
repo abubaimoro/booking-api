@@ -4,7 +4,7 @@ import 'dotenv/config'
 import { bookingRouter } from './routes/all-routes.js';
 
 // connect to mongodb
-await mongoose.connect(process.env.MONGO_URI);
+await mongoose.connect(process.env.MONGO_URI); 
 
 // create an express app
 const bookingApp = express();

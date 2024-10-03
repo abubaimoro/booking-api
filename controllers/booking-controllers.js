@@ -10,13 +10,10 @@
  }
 
  export const postAllBooking = async (req, res, next) => {
-   try {
       const newBooking = new booking(req.body);
       const bookings = await newBooking.save();
        res.status(201).json(bookings);
-   } catch (error) {
-      next(error)
-   }
+
  }
 
  export const updateAllBooking = (req, res) => {
