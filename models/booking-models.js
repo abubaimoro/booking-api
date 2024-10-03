@@ -13,7 +13,7 @@ lastName:{
 sex: {
     type: String,
     enum: {
-        values: ("male", "female")
+        values: ["male", "female"]
     },
     // required: true
 },
