@@ -3,6 +3,7 @@ import mongoose, { connect } from 'mongoose';
 import 'dotenv/config'
 import { bookingRouter } from './routes/all-routes.js';
 import cors from "cors";
+import { userRouter } from './routes/user-routes.js';
 
 // connect to mongodb
 await mongoose.connect(process.env.MONGO_URI); 
@@ -18,6 +19,7 @@ bookingApp.get('/booking', (req, res, next) => {
 bookingApp.use(cors());
 bookingApp.use(express.json());
 bookingApp.use (bookingRouter);
+bookingApp.use(userRouter);
 
 
 // listen for upcoming requests
